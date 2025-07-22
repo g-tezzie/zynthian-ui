@@ -175,7 +175,7 @@ class zynthian_engine_inet_radio(zynthian_engine):
                     self.proc_cmd("status")
                     last_status = now
             buffer = bytes()
-            while True:
+            while self.proc:
                 try:
                     buffer += self.client.recv(1024)
                 except TimeoutError:
